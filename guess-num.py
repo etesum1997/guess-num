@@ -4,15 +4,17 @@
 # 猜錯的話 要告訴他 比答案大/小
 import random
 r = random.randint(1, 100)
+count = 0
 while True:
+    count += 1 # count = count + 1
     num = input('請猜一個1-100之間的整數：')
     num = int(num)
     if num == r:
         print('終於猜對了！')
+        print('這是你猜的第', count, '次')
         break
-    else:
-        print('不對喔嗚嗚')
-        if num > r:
+    elif num > r:
             print('比答案大！')
-        else:
+    elif num < r:
             print('比答案小！')
+    print('這是你猜的第', count, '次')
